@@ -1,4 +1,4 @@
-# PROJECT BRAKE 1 - Dashboard
+# PROJECT BREAK 1 - Dashboard
 Bienvenido al primer PROJECT BREAK. Después de varias semanas de duro trabajo vamos a poner en práctica todo lo que has aprendido.
 
 Vas a crear un Dasboard en el que podrás ver 4 elementos:
