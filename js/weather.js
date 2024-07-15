@@ -24,14 +24,19 @@ fetch(apiUrl)
     const currentWeather = `
       <h1>${location}</h1>
       <p>${condition}</p>
-      <img src="${icon}" alt="Weather Icon">
-      <p>${tempC}°C</p>
-      <p>Precipitaciones: ${precip} mm</p>
-      <p>Humedad: ${humidity}%</p>
-      <p>Viento: ${windKph} km/h</p>
-      <h2>Previsión por horas</h2>
+      <div class='current-weather'>
+        <div class='grados'>
+        <img src="${icon}" alt="Weather Icon" class='weather-icon'>
+        <p>${tempC}°C</p>
+        </div>
+        <ul class='otros-datos'>
+          <li>Precipitaciones: ${precip} mm</li>
+          <li>Humedad: ${humidity}%</li>
+          <li>Viento: ${windKph} km/h</li>
+        </ul>
+      </div>
       <div id="hourly-forecast">
-      <ul id="hour-list"></ul>
+        <ul id="hour-list"></ul>
       </div>
     `;
 
