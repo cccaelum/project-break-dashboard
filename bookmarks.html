@@ -11,10 +11,18 @@
         <a href="./index.html"><img src="./assets/img/home.png" alt="home"></a>
     </header>
     <main>
+        <section class="bookmarks-container">
         <div id="bookmarks-container">
             <h2>Añade tu enlace 🔗</h2>
+            <div class="input-container">
+                <input type="text" id="name-input" placeholder="Nombre de tu enlace" required>
+                <input type="text" id="url-input" placeholder="Pega aquí la URL" required>
+                <button id="add-link-btn">Añadir enlace</button>
+              </div>
+            <ul id="links-container"></ul>
         </div>
+    </section>
     </main>
-    <script src="./js/script.js"></script>
+    <script src="./js/bookmarks.js"></script>
 </body>
 </html>
