@@ -5,7 +5,11 @@ body {
     align-items: center;
     font-family: 'Arial', sans-serif;
     margin: 0;
-    background-color: #a84b4b;
+    background-color: #b60023;
+    background-image: url(../assets/img/mezquita.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode:multiply;
   }
 
 main {
@@ -30,10 +34,12 @@ a {
   border-radius: 8px;
   padding: 20px;
   align-self: flex-start;
-  position: absolute; /* Cambia a posicionamiento absoluto */
+  position: absolute; 
   left: 20px;
   top: 20px;
   z-index: 10;
+  width: 300px;
+  height: 300px;
 }
 
 .bookmarks-container h2 {
@@ -46,6 +52,35 @@ a {
   flex-direction: column;
 }
 
+input[type="text"] {
+  padding: 5px;
+  margin: 3px;
+  border: none;
+  border-radius: 5px;
+}
+.link a {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+  margin: 5px;
+  background-color: #8d737393;
+  color: white;
+  border-radius: 5px;
+}
+.delete {
+  margin-top: -20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 10px;
+  background-color: #9b0a0a93;
+}
 .time-container {
     display: flex;
     flex-direction: column;
@@ -102,7 +137,7 @@ a {
   display: flex;
   font-size: 24px;
   margin-bottom: 0;
-  color: #ddd; 
+  color: /*#0063c5d8*/ #8e7240; 
 }
   
 #weather-container p {
@@ -194,9 +229,9 @@ input[type="number"] {
     border-radius: 5px;
 }
 
-button {
-  background-color: #eba300;
-  color: #000000;
+#passBtn, #add-link-btn {
+  background-color: #006e24;
+  color: white;
   border: none;
   margin: 5px;
   padding: 10px;
@@ -204,9 +239,23 @@ button {
   cursor: pointer;
 }
 
+#passBtn:hover, #add-link-btn:hover {
+  background-color: #01551d;
+}
+
 #passwordResult {
   font-size: 18px;
   color: #ffe5c1;
+}
+
+.home {
+  width: 50px;
+  height: 50px;
+  filter: brightness(0) invert(1)
+}
+
+.home:hover {
+  filter: brightness(0) invert(0.7); 
 }
 
 footer {
@@ -216,7 +265,7 @@ footer {
     width: 100%;
     bottom: 0;
     padding: 10px;
-    border-bottom: 1px solid white;
+    border-bottom: 0.5px solid white;
   }
   
 footer nav {
@@ -226,6 +275,8 @@ footer nav {
   }
 
   footer nav a img {
+    width: 50px;
+    height: 50px;
     filter: brightness(0) invert(1); 
     transition: filter 0.3s;
   }

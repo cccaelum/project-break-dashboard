@@ -29,8 +29,9 @@
         </section>
         <section class="pass-container">
             <h2>Crea tu contraseña segura 🔑</h2>
+            <p>Elige un número de caracteres</p>
             <input type="number" id="length" name="length" min="12" max="50" value="12">
-            <button type="button" onclick="generatePassword()">Generar contraseña</button>
+            <button type="button" id="passBtn" onclick="generatePassword()">Generar contraseña</button>
             <div id="passwordResult"></div>
         </section>
         <footer>
