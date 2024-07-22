@@ -6,6 +6,11 @@ let links = JSON.parse(localStorage.getItem('links')) || [];
 
 // funcion para crear links en el DOM a la vez que se guardan en el LocalStorage
 const addLink = () => {
+    // Validar que ambos inputs tengan valores
+    if (nameInput.value === '' || urlInput.value === '') {
+        return; // Salir de la función si los campos están vacíos
+    }
+
     const link = {
         id: Date.now(), // generar un ID único basado en el timestamp
         name: nameInput.value,
@@ -22,6 +27,10 @@ const addLink = () => {
     </li>
     `
     linksContainer.innerHTML += template
+
+    // Limpiar los campos de entrada después de agregar el enlace
+    nameInput.value = '';
+    urlInput.value = '';
 }
 
 // funcion para recuperar links del LocalStorage al recargar pagina

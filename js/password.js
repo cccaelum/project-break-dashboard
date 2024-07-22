@@ -24,3 +24,5 @@ const generatePassword = () => {
     document.getElementById('passwordResult').textContent = password.join('');
 
 }
+
+

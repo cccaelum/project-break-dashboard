@@ -6,10 +6,10 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     background-color: #b60023;
-    background-image: url(../assets/img/mezquita.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode:multiply;
+    transition: background-image 2s ease-in-out;
   }
 
 main {
@@ -29,6 +29,24 @@ a {
     text-decoration: none;
   }
 
+.header {
+  margin-top: 10px;
+  border-bottom: 0.5px solid white;
+  }
+
+.home {
+    width: 50px;
+    height: 50px;
+    filter: brightness(0) invert(1)
+  }
+  
+.home:hover {
+    filter: brightness(0) invert(0.7); 
+  }
+  
+
+/* Secciones */
+
 .bookmarks-container {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
@@ -39,7 +57,7 @@ a {
   top: 20px;
   z-index: 10;
   width: 300px;
-  height: 300px;
+  height: auto;
 }
 
 .bookmarks-container h2 {
@@ -221,6 +239,7 @@ input[type="text"] {
 
 .pass-container h2 {
   font-size: 20px;
+  margin: 0;
 }
 
 input[type="number"] {
@@ -248,15 +267,7 @@ input[type="number"] {
   color: #ffe5c1;
 }
 
-.home {
-  width: 50px;
-  height: 50px;
-  filter: brightness(0) invert(1)
-}
-
-.home:hover {
-  filter: brightness(0) invert(0.7); 
-}
+/* FIN secciones */
 
 footer {
     display: flex;
@@ -284,6 +295,89 @@ footer nav {
   footer nav a img:hover {
     filter: brightness(0) invert(0.7); 
   }
+
+  /* Estilos responsive */
+  @media (max-width: 768px) {
+    main {
+        align-items: center;
+    }
+
+    .time-container, .bookmarks-container, .pass-container {
+        width: 90%;
+        margin: 10px 0;
+        align-self: center;
+        position: static; 
+    }
+
+    #clock-container, #weather-container {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+
+    #time {
+        font-size: 36px;
+    }
+
+    #date {
+        font-size: 18px;
+    }
+
+    .grados {
+        font-size: 36px;
+    }
+
+    .forecast-item {
+        margin: 5px;
+        padding: 8px;
+    }
+
+    footer nav {
+        gap: 10px;
+    }
+
+    footer nav a img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .time-container, .bookmarks-container, .pass-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    #clock-container, #weather-container {
+        width: 100%;
+    }
+
+    #time {
+        font-size: 24px;
+    }
+
+    #date {
+        font-size: 14px;
+    }
+
+    .grados {
+        font-size: 24px;
+    }
+
+    .forecast-item {
+        margin: 3px;
+        padding: 5px;
+    }
+
+    footer nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    footer nav a img {
+        width: 30px;
+        height: 30px;
+    }
+}
 
 
   
