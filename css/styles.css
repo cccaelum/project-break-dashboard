@@ -343,12 +343,13 @@ footer nav {
 
 @media (max-width: 480px) {
     .time-container, .bookmarks-container, .pass-container {
-        width: 100%;
+        width: 90%;
         padding: 15px;
     }
 
     #clock-container, #weather-container {
-        width: 100%;
+        width: 90%;
+        padding: 15px;
     }
 
     #time {
