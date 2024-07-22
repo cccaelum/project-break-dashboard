@@ -7,7 +7,6 @@ body {
     margin: 0;
     background-color: #b60023;
     background-repeat: no-repeat;
-    background-size: cover;
     background-blend-mode:multiply;
     transition: background-image 2s ease-in-out;
   }
@@ -277,7 +276,12 @@ footer {
     bottom: 0;
     padding: 10px;
     border-bottom: 0.5px solid white;
+    box-sizing: border-box;
   }
+
+.footer {
+  padding-top: 500px;
+}
   
 footer nav {
     display: flex;
@@ -370,7 +374,6 @@ footer nav {
     }
 
     footer nav {
-        flex-direction: column;
         gap: 5px;
     }
 

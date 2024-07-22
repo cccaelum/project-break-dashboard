@@ -15,6 +15,7 @@ const images = [
     const randomIndex = Math.floor(Math.random() * images.length);
     const randomImage = images[randomIndex];
     document.body.style.backgroundImage = `url('${randomImage}')`;
+    document.body.style.backgroundSize = 'cover';
   }
 
   changeBackgroundImage();
