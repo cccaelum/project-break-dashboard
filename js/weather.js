@@ -11,7 +11,7 @@ apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city},${c
 fetch(apiUrl)
   .then(response => response.json())
   .then(data => {
-    weatherDiv = document.getElementById('weather-container');
+    const weatherDiv = document.getElementById('weather-container');
 
     const location = `${data.location.name}, ${data.location.country}`,
     condition = data.current.condition.text,
@@ -47,14 +47,14 @@ fetch(apiUrl)
     fetch(forecastUrl)
       .then(response => response.json())
       .then(forecastData => {
-        const hourlyForecast = forecastData.forecast.forecastday[0].hour;
+        const hourlyForecast = forecastData.forecast.forecastday[0].hour; // accedemos al primer elemento del array forecastday, [0], que el primer día de la previsión
         const hourUl = document.getElementById('hour-list');
 
         hourlyForecast.forEach(hour => {
           const hourLi = document.createElement('li');
           hourLi.className = 'forecast-item';
           hourLi.innerHTML = `
-            <p>${hour.time.split(' ')[1]}</p>
+            <p>${hour.time.split(' ')[1]}</p> 
             <img src="${hour.condition.icon}" alt="Weather Icon">
             <p>${hour.temp_c}°C</p>
           `;
