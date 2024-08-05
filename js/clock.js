@@ -1,4 +1,4 @@
-const index = document.getElementById('index')
+const index = document.getElementById('index');
 const time = document.getElementById('time'),
 date = document.getElementById('date'),
 message = document.getElementById('message'),
