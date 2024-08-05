@@ -1,17 +1,22 @@
+const index = document.getElementById('index')
 const time = document.getElementById('time'),
 date = document.getElementById('date'),
-message = document.getElementById('message')
+message = document.getElementById('message'),
+alarmMessage = document.getElementById('alarm-message'),
+alarmBtn = document.getElementById('alarmBtn');
+
+let alarmTime = null;
 
 const formatTime = num => num < 10 ? '0' + num : num;
 
 const clockDate = () => {
     let now = new Date();
-    hours = formatTime(now.getHours());
-    minutes = formatTime(now.getMinutes());
-    seconds = formatTime(now.getSeconds());
-    day = formatTime(now.getDate());
-    month = formatTime(now.getMonth() + 1);
-    year = formatTime(now.getFullYear());
+    let hours = formatTime(now.getHours());
+    let minutes = formatTime(now.getMinutes());
+    let seconds = formatTime(now.getSeconds());
+    let day = formatTime(now.getDate());
+    let month = formatTime(now.getMonth() + 1);
+    let year = formatTime(now.getFullYear());
 
     
     time.textContent = `${hours}:${minutes}:${seconds}`;
@@ -33,14 +38,41 @@ const clockDate = () => {
     } else {
         mensaje = "Buenas noches, es hora de pensar en parar y descansar";
     }
-
+    if (!index) {
     message.textContent = mensaje;
+    }
+   
+    // Verificar si es la hora de la alarma
+    if (alarmTime && hours == alarmTime.hours && minutes == alarmTime.minutes) {
+        console.log("¡Es la hora de la alarma!"); // Mostrar en consola
+        alert("¡Es la hora de la alarma!"); // Mostrar alerta
+        alarmMessage.textContent = "¡Es la hora de la alarma!"; // Mostrar mensaje de alarma
+        alarmTime = null; // Detener la alarma después de activarla
+    }
 };
+
+const setAlarm = () => {
+    const alarmHours = parseInt(document.getElementById('alarmHours').value);
+    const alarmMinutes = parseInt(document.getElementById('alarmMinutes').value);
+
+    // Formatear la hora y los minutos de la alarma
+    alarmTime = {
+        hours: alarmHours,
+        minutes: alarmMinutes
+    };
+
+    alarmMessage.textContent = `Alarma establecida para las ${formatTime(alarmTime.hours)}:${formatTime(alarmTime.minutes)}`;
+}
+
+alarmBtn.addEventListener('click', setAlarm);
+
 
 // Actualizar el reloj cada segundo
 setInterval(clockDate, 1000);
 
 clockDate();
+
+
 
 
 

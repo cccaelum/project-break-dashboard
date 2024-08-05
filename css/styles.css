@@ -186,6 +186,16 @@ input[type="text"] {
   font-size: 20px;
 }
 
+#alarm-container {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 12px;
+  text-align: center;
+  color: white;
+  padding: 40px;
+  border-radius: 50%;
+}
 #weather-container {
   background: rgba(255, 255, 255, 0.1);
   padding: 20px;
@@ -293,7 +303,7 @@ input[type="number"] {
     border-radius: 5px;
 }
 
-#passBtn, #add-link-btn {
+#passBtn, #add-link-btn, #alarmBtn {
   font-family: "Nunito", sans-serif;
   background-color: #006e24;
   color: white;
@@ -304,7 +314,7 @@ input[type="number"] {
   cursor: pointer;
 }
 
-#passBtn:hover, #add-link-btn:hover {
+#passBtn:hover, #add-link-btn:hover, #alarmBtn:hover {
   background-color: #01551d;
 }
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +20,15 @@
             <div id="date"></div>
             <div id="message"></div>
         </div>
+        <div id="alarm-container">
+            <h2>Alarma ⏰</h2>
+                <div id="alarm-input">
+                    <input type="number" id="alarmHours" min="0" max="23" placeholder="00">
+                    <input type="number" id="alarmMinutes" min="0" max="59" placeholder="00">
+                </div>
+            <button id="alarmBtn">Establecer</button>
+        </div>
+        <div id="alarm-message"></div>
     </main>
     <footer class="footer2">
         <nav>
