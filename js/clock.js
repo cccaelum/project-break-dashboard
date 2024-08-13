@@ -7,6 +7,8 @@ alarmBtn = document.getElementById('alarmBtn');
 
 let alarmTime = null;
 
+const alarmSound = new Audio('./assets/audio/rooster.wav');
+
 const formatTime = num => num < 10 ? '0' + num : num;
 
 const clockDate = () => {
@@ -44,9 +46,9 @@ const clockDate = () => {
    
     // Verificar si es la hora de la alarma
     if (alarmTime && hours == alarmTime.hours && minutes == alarmTime.minutes) {
-        console.log("¡Es la hora de la alarma!"); // Mostrar en consola
-        alert("¡Es la hora de la alarma!"); // Mostrar alerta
+        console.log("¡Es la hora de la alarma!"); 
         alarmMessage.textContent = "¡Es la hora de la alarma!"; // Mostrar mensaje de alarma
+        alarmSound.play();
         alarmTime = null; // Detener la alarma después de activarla
     }
 };
