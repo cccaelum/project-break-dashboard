@@ -66,7 +66,7 @@ const setAlarm = () => {
     alarmMessage.textContent = `Alarma establecida para las ${formatTime(alarmTime.hours)}:${formatTime(alarmTime.minutes)}`;
 }
 
-alarmBtn.addEventListener('click', setAlarm);
+if (!index) { alarmBtn.addEventListener('click', setAlarm); }
 
 
 // Actualizar el reloj cada segundo

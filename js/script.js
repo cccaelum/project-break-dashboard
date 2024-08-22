@@ -1,26 +1,28 @@
-const time = document.getElementById('time'),
-date = document.getElementById('date');
+// random background
 
-const formatTime = num => num < 10 ? '0' + num : num;
+const images = [
+    './assets/img/balcon.jpg',
+    './assets/img/calle.jpg',
+    './assets/img/corredera.jpg',
+    './assets/img/farol.jpg',
+    './assets/img/flor.jpg',
+    './assets/img/macetas.jpg',
+    './assets/img/mezquita.jpg',
+    './assets/img/patios.jpg',
+    './assets/img/puente.jpg',
+    './assets/img/rejas.jpg',
+  ];
+  
+  const changeBackgroundImage = () => {
+    const randomIndex = Math.floor(Math.random() * images.length);
+    const randomImage = images[randomIndex];
+    document.body.style.backgroundImage = `url('${randomImage}')`;
+    document.body.style.backgroundSize = 'cover';
+  }
+  
+  changeBackgroundImage();
+  
+  setInterval(changeBackgroundImage, 11000);
 
-const clockDate = () => {
-    let now = new Date();
-    let hours = formatTime(now.getHours());
-    let minutes = formatTime(now.getMinutes());
-    let seconds = formatTime(now.getSeconds());
-    let day = formatTime(now.getDate());
-    let month = formatTime(now.getMonth() + 1);
-    let year = formatTime(now.getFullYear());
 
-    if (index) {
-        time.textContent = `${hours}:${minutes}:${seconds}`;
-        date.textContent = `${day}/${month}/${year}`;
-    }
-    
-}
-
-// Actualizar el reloj cada segundo
-setInterval(clockDate, 1000);
-
-clockDate();
 
